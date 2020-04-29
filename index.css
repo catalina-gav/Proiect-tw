@@ -17,7 +17,12 @@
 body {
   
 	margin: 0;
-	background: rgb(81, 83, 82);
+	background-image:
+radial-gradient(circle at 100% 150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 0    150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 50%  100%, white 10%, rgb(248, 247, 247) 10%, rgb(248, 247, 247) 23%, white 23%, white 30%, rgb(248, 247, 247) 30%, rgb(248, 247, 247) 43%, white 43%, white 50%, rgb(248, 247, 247) 50%, rgb(248, 247, 247) 63%, white 63%, white 71%, transparent 71%, transparent),
+radial-gradient(circle at 100% 50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent),
+radial-gradient(circle at 0    50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent);
 	font-family: 'Candara';
 	font-weight: 400;
 }
@@ -38,14 +43,26 @@ background-size: 100px 50px;
   margin-top:15em;
   margin-bottom: 10em;
   display:inline-grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto auto;
+  grid-gap:50px;
+  
+  
 }
 .blog-post{
   height: 15em;
   width: 15em;
   background-color: #bbb;
+  opacity: 70%;
   border-radius: 50%;
   display: inline-block;
+   box-shadow: 2px 2px 2px rgb(55, 56, 59);
+   text-align: center;
+  
+}
+.blog-post:hover{
+  height: 16em;
+  width: 16em;
+  opacity:100%
 }
 
 /* navigation styles start here */
@@ -150,21 +167,6 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-@media screen and ( max-width : 800){
-  .blogpost-wrapper{
-    margin-top:15em;
-    margin-bottom: 10em;
-    display:inline-grid;
-    grid-template-columns: auto auto;
-  }
-  .blog-post{
-    height: 15em;
-    width: 15em;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-  }
-}
 
 @media screen and (min-width: 980px) {
   .nav-toggle-label {
@@ -266,12 +268,18 @@ footer:hover{
   position: relative;
 }
 
+
 .fa {
-  padding: 20px;
+  
+  height:50px;
   font-size: 30px;
   width: 50px;
+  margin:10px;
   text-align: center;
+  box-shadow: 0 5px 15px -5px rgb(55, 56, 59);
+  border-radius: 50%;
   text-decoration: none;
+  border-radius: 50%;
 }
 
 .fa:hover {

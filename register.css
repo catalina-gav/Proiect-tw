@@ -38,7 +38,11 @@ body{
     margin-bottom: 1rem;
 }
 .form-button{
-    background:  #336333;
+    border-radius: 30px;
+    background: rgb(25,80,63);
+    background: #56ab2f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: 1px solid #ddd;
     color: #ffffff;
     padding: 10px;
@@ -46,7 +50,9 @@ body{
     text-transform: uppercase;
 }
 .form-button:hover{
-    background: #336333;
+    background: #56ab2f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .form-header{
     

@@ -59,7 +59,7 @@
     <div class="third-footer-part">
         <h3>You can also find us on:</h3>
     
-        <a href="#" class="fa fa-facebook"></a>
+        <a href="www.facebook.com" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-instagram"></a>
     
