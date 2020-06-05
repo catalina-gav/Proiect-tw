@@ -1,0 +1,322 @@
+
+
+:root {
+  
+    --background: #56ab2f; /* fallback for old browsers */
+    --background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  .logo{
+    color: white;
+  }
+  body {
+    
+      margin: 0;
+      background-image:
+  radial-gradient(circle at 100% 150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, rgb(248, 247, 247) 10%, rgb(248, 247, 247) 23%, white 23%, white 30%, rgb(248, 247, 247) 30%, rgb(248, 247, 247) 43%, white 43%, white 50%, rgb(248, 247, 247) 50%, rgb(248, 247, 247) 63%, white 63%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent);
+      font-family: 'Candara';
+      font-weight: 400;
+  }
+  
+  .content {
+    text-align: center;
+    height: auto;
+    background-color:rgb(248, 247, 247);
+  background-image:
+  radial-gradient(circle at 100% 150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 0    150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
+  radial-gradient(circle at 50%  100%, white 10%, rgb(248, 247, 247) 10%, rgb(248, 247, 247) 23%, white 23%, white 30%, rgb(248, 247, 247) 30%, rgb(248, 247, 247) 43%, white 43%, white 50%, rgb(248, 247, 247) 50%, rgb(248, 247, 247) 63%, white 63%, white 71%, transparent 71%, transparent),
+  radial-gradient(circle at 100% 50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent),
+  radial-gradient(circle at 0    50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent);
+  background-size: 100px 50px;
+  }
+  .blogpost-wrapper{
+    margin-top:15em;
+    margin-bottom: 10em;
+    display:inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-gap:50px;
+    
+    
+  }
+  .blog-post{
+    height: 15em;
+    width: 15em;
+    background-color: #bbb;
+    opacity: 70%;
+    border-radius: 50%;
+    display: inline-block;
+     box-shadow: 2px 2px 2px rgb(55, 56, 59);
+     text-align: center;
+    
+  }
+  .blog-post:hover{
+    height: 16em;
+    width: 16em;
+    opacity:100%
+  }
+  
+  /* navigation styles start here */
+  
+  header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+  }
+  
+  /* changed this from the tutorial video to
+     allow it to gain focus, making it tabbable */
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    right: -9999px !important;
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgb(81, 83, 82);
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  nav a:hover {
+    color: rgb(81, 83, 82);
+  }
+  
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  
+  @media screen and (min-width: 980px) {
+    .nav-toggle-label {
+      display: none;
+    }
+    
+  
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+    
+    .logo {
+      grid-column: 2 / 3;
+    }
+    
+    nav {
+      /* all: unset; /* this causes issues with Edge, since it's unsupported */
+      
+      /* the following lines are not from my video, but add Edge support */
+      position:relative;
+      text-align: left;
+      transition: none;
+      transform: scale(1,1);
+      background: none;
+      top: initial;
+      left: initial;
+      /* end Edge support stuff */
+      
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+    
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: rgb(81, 83, 82);
+      position: absolute;
+      top: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+      transform: scale(1,1);
+    }
+  }
+  
+  footer {
+      display: flex;
+      position: relative;  
+      flex-direction: row;
+      border-top: 2px solid solid rgb(213, 226, 213);
+      
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: #56ab2f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background-blend-mode: multiply;
+      color: white;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+  }
+  footer:hover{
+    background: #56ab2f; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .first-footer-part{
+    margin-left: 4em;
+  }
+  .third-footer-part{
+    margin-right: 4em;
+  }
+  .second-footer-part{
+    text-align: center;
+    position: relative;
+  }
+  
+  
+  .fa {
+    
+    height:50px;
+    font-size: 30px;
+    width: 50px;
+    margin:10px;
+    text-align: center;
+    box-shadow: 0 5px 15px -5px rgb(55, 56, 59);
+    border-radius: 50%;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram {
+    background: #d84c82;
+    color: white;
+  }
+  footer ul{
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .border{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-top:6 em;
+    border-left: 3px solid rgb(213, 226, 213);
+    opacity: 0.7;
+    height: auto;
+    margin-block-start: 2em;
+    margin-block-end: 2em;
+    
+  
+  }
