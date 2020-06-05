@@ -13,7 +13,7 @@ if (!$conn) {
   } 
   $password=password_hash($password,PASSWORD_BCRYPT);
   $stmt = $conn->prepare("INSERT INTO user(first_name,last_name,username,role,organization,email,birth_date,password) VALUES(?,?,?,?,?,?,?,?)");
-  $stmt->bind_param("ssssssss",$firstname,$lastname,$username,$role,$email,$birthdate,$password);
+  $stmt->bind_param("ssssssss",$firstname,$lastname,$username,$role,$organization,$email,$birthdate,$password);
   if($stmt->execute())
 {
     header('Location: index.html');
