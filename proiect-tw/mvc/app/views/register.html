@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="register.css">
+        <title>The Register Form</title>
+    </head>
     <header>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">🏡Home</a></li>
                 <li><a href="#">Events</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="#">Info</a></li>
                 <li><a href="statistics.html">Statistics</a></li>
                 <li><a href="login.html">Login</a></li>
@@ -20,11 +27,6 @@
             <span></span>
         </label>
     </header>
-    
-<head>
-    <link rel="stylesheet" href="register.css">
-    <title>The Register Form</title>
-</head>
 <body>
     <div class="wrap">
         <form class="login-form" action="signup.php" method="POST" >
@@ -41,6 +43,12 @@
             </div>
             <div class="formular">
                 <input type="text" class="form-input" placeholder="Username" name="username">
+            </div>
+            <div class="formular">
+                <input type="text" class="form-input" placeholder="Role" name="role">
+            </div>
+            <div class="formular">
+                <input type="password" class="form-input" placeholder="Organization" name="organization">
             </div>
             <div class="formular">
                 <input type="email" class="form-input" placeholder="E-mail" name="email">
@@ -95,4 +103,5 @@
      </ul>   
     </div>
 </footer>
+ 
 </html>
