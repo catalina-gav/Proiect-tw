@@ -2,7 +2,7 @@
 class Post
 {
     private $con;
-    private $table = 'form_notices';
+    private $table = 'notice_form';
     public $first_name;
     public $last_name;
     public $email;

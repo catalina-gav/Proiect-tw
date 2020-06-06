@@ -108,10 +108,10 @@
             <br>
             <br>
             <div class="formular">
-                <input type="text" class="form-input"  placeholder="Neighbourhood" name ="cartier"></input>
-                <input type="number" class="form-input" name="trash" placeholder="Estimated trash quantity(kg)">
+                <input type="text" class="form-input"  placeholder="Neighbourhood" name ="cartier">
+                
             </div>
-               
+            <input type="number" class="form-input" name="trash" placeholder="Estimated trash quantity(kg)">
             </div>
             <div class="formular">
                 <button class="form-button" type="submit" value="submit">Submit area information</button>

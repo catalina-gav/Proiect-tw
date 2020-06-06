@@ -26,7 +26,7 @@ class Form extends Controller
                 'role' => trim($_POST['role']),
                 'city' => trim($_POST['city']),
                 'cartier' => trim($_POST['cartier']),
-                'cartier' => trim($_POST['trash'])
+                'trash' => trim($_POST['trash'])
             ];
             print_r($data);
         
