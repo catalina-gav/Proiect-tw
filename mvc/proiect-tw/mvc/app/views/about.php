@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:1234/proiect-tw/mvc/public/css/about.css">
+    <title>About</title>
+</head>
     <header>
-        <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="http://localhost:1234/proiect-tw/mvc/public/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
         
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +28,6 @@
             <span></span>
         </label>
     </header>
-    
-<head>
-    <link rel="stylesheet" href="about.css">
-    <title>About</title>
-</head>
 <body>
     <div class="about">
         <div class="introdu">

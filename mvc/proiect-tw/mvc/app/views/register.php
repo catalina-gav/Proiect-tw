@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://localhost:1234/proiect-tw/mvc/public/css/register.css">
+        <title>The Register Form</title>
+    </head>
     <header>
-        <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="http://localhost:1234/proiect-tw/mvc/public/css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,33 +27,35 @@
             <span></span>
         </label>
     </header>
-    
-<head>
-    <link rel="stylesheet" href="register.css">
-    <title>The Register Form</title>
-</head>
 <body>
     <div class="wrap">
-        <form class="login-form" action="http://localhost:1234/proiect-tw/mvc/public/registerForm/submit" method="POST" >
+    <form class="login-form" action="http://localhost:1234/proiect-tw/mvc/public/registerForm/submit" method="POST" >
             <div class="form-header">
-            
-                <h3>Signup to GaSM</h3>
-                
+                <h3>Signup to GaSM</h3>  
             </div>
             <div class="formular">
-                <input type="text" class="form-input" placeholder="First name" name="firstname">
+                <input type="text" class="form-input" placeholder="First name" name="first_name">
             </div>
             <div class="formular">
-                <input type="text" class="form-input" placeholder="Last name" name="lastname">
+                <input type="text" class="form-input" placeholder="Last name" name="last_name">
             </div>
             <div class="formular">
                 <input type="text" class="form-input" placeholder="Username" name="username">
+            </div>
+            <div class="formular">  
+            <input name="role" type="radio"  value="citizen">
+            <label for="citizen">Citizen</label><br>
+            <input name="role" type="radio"  value="public or private institution">
+            <label for="public or private institution" >Public/Private Institution</label><br>
+           </div>
+            <div class="formular">
+                <input type="password" class="form-input" placeholder="Organization" name="organization">
             </div>
             <div class="formular">
                 <input type="email" class="form-input" placeholder="E-mail" name="email">
             </div>
             <div class="formular">
-                <input type="date" class="form-input" placeholder="Birthdate" name="birthdate">
+                <input type="date" class="form-input" placeholder="Birthdate" name="birth_date">
             </div>
             <div class="formular">
                 <input type="password" class="form-input" placeholder="Password" name="password">

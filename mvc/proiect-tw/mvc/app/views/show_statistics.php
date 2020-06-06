@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+        <title>Statistics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://localhost:1234/proiect-tw/mvc/public/css/show_statistics.css">
+    </head>
 <header>
-    <link rel="stylesheet" href="index.css">
-    
+<link rel="stylesheet" type="text/css" href="http://localhost:1234/proiect-tw/mvc/public/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
     <h1 class="logo">GaSM</h1>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -20,10 +27,6 @@
         <span></span>
     </label>
 </header>
-<head>
-    <link rel="stylesheet" href="show_statistics.css">
-    <title>Statistics</title>
-</head>
 <body>
     <div class="statistics">
         <form class="statistic-form" action="/statistics" method="POST">

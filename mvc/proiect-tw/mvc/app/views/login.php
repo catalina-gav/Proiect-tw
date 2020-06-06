@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://localhost:1234/proiect-tw/mvc/public/css/login.css">
+    <title>The Login Form</title>
+</head>
     <header>
         <link rel="stylesheet" type="text/css" href="http://localhost:1234/proiect-tw/mvc/public/css/index.css">
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -20,11 +27,6 @@
             <span></span>
         </label>
     </header>
-    
-<head>
-    <link rel="stylesheet" type="text/css" href="http://localhost:1234/proiect-tw/mvc/public/css/login.css">
-    <title>The Login Form</title>
-</head>
 <body>
     <div class="wrap">
         <form class="login-form" action="http://localhost:1234/proiect-tw/mvc/public/loginForm/submit" method="POST">
