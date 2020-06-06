@@ -27,7 +27,7 @@
 </head>
 <body>
     <div class="wrap">
-        <form class="login-form" action="signup.php" method="POST" >
+        <form class="login-form" action="http://localhost:1234/proiect-tw/mvc/public/registerForm/submit" method="POST" >
             <div class="form-header">
             
                 <h3>Signup to GaSM</h3>
