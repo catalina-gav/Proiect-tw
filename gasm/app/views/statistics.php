@@ -2,7 +2,7 @@
 <html>
     <header>
     <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">

@@ -44,9 +44,12 @@
             <div class="formular">
                 <input type="text" class="form-input" placeholder="Username" name="username">
             </div>
-            <div class="formular">
-                <input type="text" class="form-input" placeholder="Role" name="role">
-            </div>
+            <div class="formular">  
+            <input name="role" type="radio"  value="citizen">
+            <label for="citizen">Citizen</label><br>
+            <input name="role" type="radio"  value="public or private institution">
+            <label for="public or private institution" >Public/Private Institution</label><br>
+           </div>
             <div class="formular">
                 <input type="password" class="form-input" placeholder="Organization" name="organization">
             </div>
@@ -71,20 +74,21 @@
 
 
 
+
 <footer>
     <div class="first-footer-part">
-        <h3>馃懆鈥嶐煈ㄢ€嶐煈р€嶐煈ontact details:</h3>
+        <h3>👨‍👨‍👧‍👧Contact details:</h3>
         <ul>
         <li>Email: gasm@recycle.com</li>
         <li> Tel: 0040748820151</li> 
         <li><Address> Flowers Street, 9</Address>
-         <li>Contact us!馃挰</li>
+         <li>Contact us!💬</li>
         </li>   
      </ul>   
     </div>
     <span class='border'></span>   
     <div class="second-footer-part">
-            <h3>馃槃Subscribe to our newsletter:</h1>
+            <h3>😄Subscribe to our newsletter:</h1>
             <input type="email" class="form-input" placeholder="E-mail">
             <br>
             <br>
@@ -103,5 +107,4 @@
      </ul>   
     </div>
 </footer>
- 
 </html>
