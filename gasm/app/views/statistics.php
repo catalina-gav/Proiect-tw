@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="statistic">
-        <form class="button-area" action="http://localhost:1234/gasm/public/statistics/redirectPage">
+        <form class="button-area" action="http://localhost:1234/gasm/public/statistics/redirectPage/">
             <div class="formular">
           <button class="form-button" type="submit">Show Statistics</button>
           </div>

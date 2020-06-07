@@ -29,10 +29,10 @@
 </header>
 <body>
     <div class="statistics">
-        <form class="statistic-form" action="http://localhost:1234/gasm/public/statistics/exportCSV" method="GET">
+        <form class="statistic-form" action="http://localhost:1234/gasm/public/statistics/exportCSV" method="POST">
             <div class="formular">
               <!-- <input type="text" class="form-input" placeholder="Choose between day,week,month"> -->
-                <select  class="form-input" name="time" form="timeform">
+                <select  class="form-input" name="time" >
                     <option value="Day">Day</option>
                     <option value="Week">Week</option>
                     <option value="Month">Month</option>
@@ -40,20 +40,20 @@
             </div>
             <div class="formular">
                <!-- <input type="text" class="form-input" placeholder="Choose neighborhood / city"> -->
-               <select  class="form-input" name="space" form="spaceform">
+               <select  class="form-input" name="space" >
                 <option value="Neighborhood">Neighborhood</option>
                 <option value="City">City</option>
                 </select>
             </div>
             <div class="formular">
-                <select  class="form-input" name="format" form="formatform">
+                <select  class="form-input" name="format" >
                     <option value="HTML">HTML</option>
                     <option value="CSV">CSV</option>
                     <option value="PDF">PDF</option>
                 </select>
             </div>
             <div class="formular">
-                <button class="button" type="submit">Download</button>
+                <button class="button" type="submit" >Download</button>
             </div>
            </form>
            <div class="show">

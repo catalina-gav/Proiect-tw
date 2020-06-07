@@ -61,14 +61,34 @@ class Post
         return false;
     }
   
-    public function read($data)
+    public function read($time,$place)
     {
-
-        $query = 'SELECT id , city, 
-        cartier, trash, notice_date FROM ' . $this->table ;
-        $stmt = $this->conn->prepare($query);
-        //execute
-        $stmt->execute();
-        return $stmt;
+        if(strcasecmp($time,"day")==0){
+            $nr = 1;
+        }elseif(strcasecmp($time,"week")==0){
+            $nr = 7;
+        }else{
+            $nr = 30;
+        }
+       
+        if(strcasecmp($place, "city")==0){
+            $query = 'SELECT city, 
+            sum(trash) as quantity FROM ' . $this->table . ' where datediff(current_date,notice_date) <= :nr group by city';
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":nr",$nr);
+            //execute
+            
+            $stmt->execute();
+            return $stmt;
+        }elseif (strcasecmp($place, "neighborhood")==0) {
+            $query = 'SELECT city,cartier, 
+            sum(trash) as quantity FROM ' . $this->table . ' where datediff(current_date,notice_date) <= :nr group by cartier,city' ;
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":nr",$nr);
+            //execute
+            $stmt->execute();
+            return $stmt;
+        }
+        
     } 
 }
