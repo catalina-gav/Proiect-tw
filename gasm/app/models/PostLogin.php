@@ -27,6 +27,7 @@ class PostLogin
         //execute query
         if($pstmt->execute()){
             $row=$pstmt->fetch(PDO::FETCH_ASSOC);
+            if(!empty($row)){
             $user=array("username"=>$row['username'],"password"=>$row['password']);
             if(password_verify($this->password,$user['password']))
             {
@@ -35,9 +36,11 @@ class PostLogin
             return false;
             }
         }
+        return false;
+        }
 
         // Print error if something goes wrong
-        printf("Error: %s.\n",$pstmt->error);
+      //  printf("Error: %s.\n",$pstmt->error);
         return false;
     }
 }

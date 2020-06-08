@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class LoginForm extends Controller 
 {
     public function __construct()
@@ -9,11 +9,31 @@ class LoginForm extends Controller
         $this->post = $this->model('PostLogin',$this->db);
     }
     public function index()
-    {
+    {  
+       /* if(isset( $_SESSION['username']))
+        {
+            $data['login']='You are already logged in! If you want to change account got to logout button!';
+            $this->view('login',$data);
+        }else{*/
         $this->view('login');
+        //}
+    }
+    public function logout()
+    {
+        if(isset( $_SESSION['username']))
+    { session_unset();
+        session_destroy();
+    }
+    $this->view('login');
     }
     public function submit()
     {
+
+        if(isset( $_SESSION['username']))
+        {
+            $data['login']='You are already logged in! If you want to change account got to logout button!';
+            $this->view('login',$data);
+        }
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             //sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -21,21 +41,45 @@ class LoginForm extends Controller
                 'username' => trim($_POST['username']),
                 'password' => trim($_POST['password']),
             ];
-            print_r($data);
-
+           // print_r($data);
+           if(empty($_POST['username'])||empty($_POST['password']))
+           {  $data = [
+               'usernameErr' =>'',
+               'passwordErr' =>''
+           ];
+         if(empty($_POST['username']))
+         {
+           $data['usernameErr']='Username is required';
+         }
+         if(empty($_POST['password']))
+         {
+           $data['passwordErr']='Password is required';
+           
+         }
+      // print_r($data);
+         $this->view('login',$data);
+       }
         if( 
             !empty($data['username']) &&
             !empty($data['password']) 
             ){
-                echo 'aici';
+               // echo 'aici';
         $this->post->username= $data['username'];
         $this->post->password= $data['password'];
         if($this->post->select()){
-            echo json_encode(
+          $_SESSION['username']=$data['username'];
+          $this->view('home/index');
+           /*echo json_encode(
                 array('message'=>'PostLogin Created')
-            );
+            );*/
         }else{
-            echo json_encode(
+             $data = [
+                'usernameErr' =>'',
+                'passwordErr' =>''
+            ];
+                $data['usernameErr']='Username/Password wrong !';
+            $this->view('login',$data);
+           echo json_encode(
                 array('message'=>'PostLogin Not Created')
             );
         }

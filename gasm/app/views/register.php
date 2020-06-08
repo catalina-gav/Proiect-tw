@@ -20,12 +20,19 @@
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
+                <?php if(!isset( $_SESSION['username']))
+        {
+               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
         </label>
+        <?php if(isset( $_SESSION['username']))
+        {
+       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
+    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
+</form>';} ?>
     </header>
 <body>
     <div class="wrap">
@@ -36,42 +43,47 @@
                 
             </div>
             <div class="formular">
-                <input type="text" class="form-input" placeholder="First name" name="first_name">
+            <span class="error">*<?php if(isset($_POST["first_name"])&&!empty($_POST['first_name'])){} else{ if(!empty($data[0]['first_name'])) print_r($data[0]['first_name']);}?></span>
+                <input type="text" class="form-input" placeholder="First name" name="first_name" value="<?php echo isset($_POST["first_name"]) ? $_POST["first_name"] : '';?>">
             </div>
             <div class="formular">
-                <input type="text" class="form-input" placeholder="Last name" name="last_name">
+            <span class="error">*<?php if(isset($_POST["last_name"])&&!empty($_POST['last_name'])){} else{ if(!empty($data[0]['last_name'])) print_r($data[0]['last_name']);}?></span>
+                <input type="text" class="form-input" placeholder="Last name" name="last_name"  value="<?php echo isset($_POST["last_name"]) ? $_POST["last_name"] : '';?>">
             </div>
             <div class="formular">
-                <input type="text" class="form-input" placeholder="Username" name="username">
+            <span class="error">*<?php if(isset($_POST["username"])&&!empty($_POST['username'])){} else{ if(!empty($data[0]['username'])) print_r($data[0]['username']);}?></span>
+                <input type="text" class="form-input" placeholder="Username" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : '';?>">
             </div>
-            <div class="formular">  
-            <input name="role" type="radio"  value="citizen">
+            <div class="formular"> 
+            <input name="role" type="radio"  value="citizen" checked>
             <label for="citizen">Citizen</label><br>
             <input name="role" type="radio"  value="public or private institution">
             <label for="public or private institution" >Public/Private Institution</label><br>
            </div>
             <div class="formular">
-                <input type="password" class="form-input" placeholder="Organization" name="organization">
+                <input type="text" class="form-input" placeholder="Organization" name="organization">
             </div>
             <div class="formular">
-                <input type="email" class="form-input" placeholder="E-mail" name="email">
+            <span class="error">*<?php if(isset($_POST["email"])&&!empty($_POST['email'])){} else{ if(!empty($data[0]['email'])) print_r($data[0]['email']);}?></span>
+                <input type="email" class="form-input" placeholder="E-mail" name="email"  value="<?php echo isset($_POST["email"]) ? $_POST["email"] : '';?>">
             </div>
             <div class="formular">
-                <input type="date" class="form-input" placeholder="Birthdate" name="birth_date">
+            <span class="error">*<?php if(isset($_POST["birth_date"])&&!empty($_POST['birth_date'])){} else{ if(!empty($data[0]['birth_date'])) print_r($data[0]['birth_date']);}?></span>
+                <input type="date" class="form-input" placeholder="Birthdate" name="birth_date"  value="<?php echo isset($_POST["birth_date"]) ? $_POST["birth_date"] : '';?>">
             </div>
             <div class="formular">
-                <input type="password" class="form-input" placeholder="Password" name="password">
+            <span class="error">*<?php if(isset($_POST["password"])&&!empty($_POST['password'])){} else{ if(!empty($data[0]['password'])) print_r($data[0]['password']);}?></span>
+                <input type="password" class="form-input" placeholder="Password" name="password"  value="<?php echo isset($_POST["password"]) ? $_POST["password"] : '';?>">
             </div>
             <div class="formular">
                 <button class="form-button" type="submit">Register</button>
             </div>
             <div class="form-footer">
-            Already have an account? <a href="http://localhost:1234/gasm/public/login.php">Login</a>
+            Already have an account? <a href="http://localhost:1234/gasm/public/loginForm">Login</a>
             </div>
         </form>
     </div>
 </body>
-
 
 
 

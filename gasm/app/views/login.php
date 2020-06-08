@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/login.css">
+    <title>The Login Form</title>
+</head>
     <header>
         <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,18 +19,21 @@
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
+                <?php if(!isset( $_SESSION['username']))
+        {
+               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
         </label>
+        <?php if(isset( $_SESSION['username']))
+        {
+       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
+    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
+</form>';} ?>
     </header>
-    
-<head>
-    <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/login.css">
-    <title>The Login Form</title>
-</head>
+
 <body>
     <div class="wrap">
         <form class="login-form" action="http://localhost:1234/gasm/public/loginForm/submit" method="POST">
@@ -32,11 +41,14 @@
                 <h3>🌿Login to GaSM🌿</h3>
                 
             </div>
+            <!--<span class="loginError"><?php if(!empty($data[0]['login'])){ print_r($data[0]['login']);}else {}?></span> -->
             <div class="formular">
-                <input type="text" class="form-input" placeholder="Username" name="username">
+            <span class="error">*<?php if(isset($_POST["username"])&&!empty($_POST['username'])&&empty($data[0]['usernameErr'])){} else if(isset($_POST["username"])&&!empty($_POST['username'])&&!empty($data[0]['usernameErr'])){ print_r($data[0]['usernameErr']);} else{ if(!empty($data[0]['usernameErr'])) print_r($data[0]['usernameErr']);}?></span>
+                <input type="text" class="form-input" placeholder="Username" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : '';?>">
             </div>
             <div class="formular">
-                <input type="password" class="form-input" placeholder="Password" name="password">
+            <span class="error">*<?php if(isset($_POST["password"])&&!empty($_POST['password'])){} else{ if(!empty($data[0]['passwordErr'])) print_r($data[0]['passwordErr']);}?></span>
+                <input type="password" class="form-input" placeholder="Password" name="password"  value="<?php echo isset($_POST["password"]) ? $_POST["password"] : '';?>">
             </div>
             <div class="formular">
                 <button class="form-button" type="submit">Login</button>
@@ -82,4 +94,4 @@
      </ul>   
     </div>
 </footer>
-</html>
+</html>s

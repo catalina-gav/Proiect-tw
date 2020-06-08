@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class RegisterForm extends Controller 
 {
     public function __construct()
@@ -9,11 +9,19 @@ class RegisterForm extends Controller
         $this->post = $this->model('PostRegister',$this->db);
     }
     public function index()
-    {   
+    {   if(isset( $_SESSION['username']))
+        {
+            session_destroy();
+        }
         $this->view('register');
     }
     public function submit()
     {   
+        if(isset( $_SESSION['username']))
+        {
+            session_destroy();
+        }
+        $this->view('register');
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             //sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -25,10 +33,52 @@ class RegisterForm extends Controller
                 'organization' => trim($_POST['organization']),
                 'email' => trim($_POST['email']),
                 'birth_date' => trim($_POST['birth_date']),
-                'password' => trim($_POST['password']),
+                'password' => trim($_POST['password'])
             ];
-            print_r($data);
-        
+            //print_r($data);
+           
+            if(empty($_POST['first_name'])||empty($_POST['last_name'])||empty($_POST['username'])||empty($_POST['email'])||empty($_POST['password'])||empty($_POST['birth_date']))
+            {  $data = [
+                'first_name' =>'',
+                'last_name' =>'',
+                'username' =>'',
+                'email' => '',
+                'birth_date' =>'',
+                'password' =>''
+            ];
+
+          if(empty($_POST['first_name']))
+          {
+              $data['first_name']='First Name is required';
+             
+          }
+        if(empty($_POST['last_name']))
+          {
+            $data['last_name']='Last Name is required';
+          }
+          if(empty($_POST['username']))
+          {
+            $data['username']='Username is required';
+          }
+          if(empty($_POST['email']))
+          {
+            $data['email']='Email is required';
+             
+          }
+          if(empty($_POST['password']))
+          {
+            $data['password']='Password is required';
+            
+          }
+          if(empty($_POST['birth_date']))
+          {
+            $data['birth_date']='Birthdate is required';
+            
+          }
+       // print_r($data);
+          $this->view('register',$data);
+        }
+    
         if( !empty($data['first_name']) &&
             !empty($data['last_name']) &&
             !empty($data['username']) &&
@@ -37,7 +87,7 @@ class RegisterForm extends Controller
             !empty($data['birth_date']) &&
             !empty($data['password']) 
             ){
-                echo 'aici';
+            //    echo 'aici';
             
         $this->post->first_name = $data['first_name'];
         $this->post->last_name= $data['last_name'];
@@ -50,6 +100,8 @@ class RegisterForm extends Controller
         
 
         if($this->post->insert()){
+            $this->view('login');
+          //  header("Location: http://localhost:1234/gasm/public/loginForm/index");
             echo json_encode(
                 array('message'=>'PostRegister Created')
             );

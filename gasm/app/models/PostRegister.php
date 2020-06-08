@@ -1,4 +1,11 @@
 <?php
+/*use PHPMailer\PHPMailer\PHPMailer;
+//use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+// Load Composer's autoloader
+require 'C:\xampp\htdocs\gasm\vendor\autoload.php';
+*/
 class PostRegister
 {
     private $con;
@@ -54,6 +61,13 @@ class PostRegister
         $pstmt->bindParam(':password',$this->password);
         //execute query
         if($pstmt->execute()){
+            /*$mail=new PHPMailer();
+              $mail->setFrom('tciobanu081@gmail.com','GaSM User Registration');
+              $mail->addAddress($this->email);
+              $mail->isHTML(true);
+              $mail->Subject='GaSM Registration';
+              $mail->Body='GaSM Registration Success';
+             $mail->send();*/
             return true;
         }
 

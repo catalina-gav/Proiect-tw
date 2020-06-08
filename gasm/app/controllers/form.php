@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Form extends Controller 
 {
     public function __construct()
@@ -9,15 +9,19 @@ class Form extends Controller
         $this->post = $this->model('Post',$this->db);
     }
     public function index()
-    {   
+    {    if(!isset( $_SESSION['username']))
+        {
+            $this->view('login');
+        }else{
         $this->view('formular_instiintare');
+        }
     }
     public function submit()
     {   
-        echo 'sunt aici';
+       // echo 'sunt aici';
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             //sanitize post data
-            echo 'sunt aici';
+          //  echo 'sunt aici';
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
                 'first_name' => trim($_POST['first_name']),
@@ -28,7 +32,7 @@ class Form extends Controller
                 'cartier' => trim($_POST['cartier']),
                 'trash' => trim($_POST['trash'])
             ];
-            print_r($data);
+           // print_r($data);
         
         if( !empty($data['first_name']) &&
             !empty($data['last_name']) &&
@@ -38,7 +42,7 @@ class Form extends Controller
             !empty($data['cartier']) &&
             !empty($data['trash']) 
             ){
-                echo 'aici';
+              //  echo 'aici';
             
         $this->post->first_name = $data['first_name'];
         $this->post->last_name= $data['last_name'];
@@ -51,16 +55,20 @@ class Form extends Controller
         
 
         if($this->post->insert()){
+            $this->view('formular_instiintare');
+           /* $message = "You reported successfuly!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+         header("Location: http://localhost:1234/gasm/public/statistics");
             echo json_encode(
                 array('message'=>'Post Created')
-            );
+            );*/
         }else{
             echo json_encode(
                 array('message'=>'Post Not Created')
             );
         }
     }
-    $this->view('formular_instiintare');
+   $this->view('home/index');
     }
 }
 }
