@@ -13,32 +13,23 @@
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <?php if(!isset( $_SESSION['username']))
-        {
-               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
+                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
             </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
     </label>
-    <?php if(isset( $_SESSION['username']))
-        {
-       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
-    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
-</form>';} ?>
 </header>
 <body>
 
 <div class="content">
     <div class="blogpost-wrapper">
-    <div class="blog-post">
-        <h3>Blog Post no1</h3>
-    </div>
-    <div class="blog-post"><h3>Blog Post no1</h3></div>
-    <div class="blog-post"><h3>Blog Post no1</h3></div>
-    <div class="blog-post"><h3>Blog Post no1</h3></div>
-    <div class="blog-post"><h3>Blog Post no1</h3></div>
-    <div class="blog-post"><h3>Blog Post no1</h3></div>
+    <div class="blog-post"><h3>Campaign</h3></div>
+    <div class="blog-post"><h3>Campaign</h3></div>
+    <div class="blog-post"><h3>Campaign</h3></div>
+    <div class="blog-post"><h3>Campaign</h3></div>
+    <div class="blog-post"><h3>Campaign</h3></div>
+    <div class="blog-post"><h3>Campaign</h3></div>
 </div>
 </div>
 </body>

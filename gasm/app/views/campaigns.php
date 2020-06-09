@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/about.css">
-    <title>About</title>
-</head>
     <header>
-        <link rel="stylesheet" type=text/css href="http://localhost:1234/gasm/public/css/index.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>campaigns</strong></a></li>
+                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>Campaigns</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <?php if(!isset( $_SESSION['username']))
-        {
-               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
+                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
         </label>
-        <?php if(isset( $_SESSION['username']))
-        {
-       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
-    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
-</form>';} ?>
     </header>
+    
+<head>
+    <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/login.css">
+    <title>Start a campaign</title>
+</head>
 <body>
-    <div class="about">
-        <div class="introdu">
-        <h1 class="titlu">GaSM</h1>
-        <p class="paragraf">  GaSM (Garbage Smart Monitor) is an application that manages information on garbage collection, sorting and recycling at the level of the citizen and authorized personnel.
-        The application provides support for users to report places where a substantial amount of garbage has accumulated, for decongestion.
-        It also provides users with numerical and graphical reports, available in HTML, CSV and PDF formats, on the current situation at the neighborhood or locality level.
-        The application also presents campaigns to raise public awareness about garbage collection and recycling .  
-        </p>
-    </div>
-    <div class="introdu">
-        <div class="foto"></div>
-    </div>
+    <div class="wrap">
+        <form class="campaigns-form" action="http://localhost:1234/gasm/public/campaigns/submit" method="POST">
+            <div class="form-header">
+                <h3>🌿Start a campaign🌿</h3>
+                
+            </div>
+            <div class="formular">
+                <input type="text" class="form-input" placeholder="User" name="user">
+            </div>
+            <div class="formular">
+                <input type="text" class="form-input" placeholder="Campaign name" name="name">
+            </div>
+            <div class="formular-description">
+                <input type="text-box" class="form-input" placeholder="Campaign description" name="description">
+            </div>
+            <div class="formular">
+                <input type="text" class="form-input" placeholder="Location" name="place">
+            </div>
+            <div class="formular">
+                <button class="form-button" type="submit">Start Campaign</button>
+            </div>
+            <div class="form-footer">
+            Want to join other campaigns? You can find them here: <a href="http://localhost:1234/gasm/public/campaigns/showcampaigns">Campaigns</a>
+            </div>
+        </form>
     </div>
 </body>
 
@@ -85,3 +89,4 @@
     </div>
 </footer>
 </html>
+
