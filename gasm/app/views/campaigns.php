@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/showCampaigns.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
         <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>Campaigns</strong></a></li>
+                <li><a href="#"><strong>Campaigns</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
@@ -33,22 +33,35 @@
                 
             </div>
             <div class="formular">
-                <input type="text" class="form-input" placeholder="User" name="user">
+            <span class="error">*<?php if(isset($_POST["user"])&&!empty($_POST['user'])){} else{ if(!empty($data[0]['user'])) print_r($data[0]['user']);}?></span>
+                <input type="text" class="form-input" placeholder="User" name="user" value="<?php echo isset($_POST["user"]) ? $_POST["user"] : '';?>">
             </div>
+
             <div class="formular">
-                <input type="text" class="form-input" placeholder="Campaign name" name="name">
+            <span class="error">*<?php if(isset($_POST["name"])&&!empty($_POST['name'])){} else{ if(!empty($data[0]['name'])) print_r($data[0]['name']);}?></span>
+                <input type="text" class="form-input" placeholder="Campaign name" name="name" value="<?php echo isset($_POST["name"]) ? $_POST["name"] : '';?>">
             </div>
-            <div class="formular-description">
-                <input type="text-box" class="form-input" placeholder="Campaign description" name="description">
+
+           <div class="formular">
+            <span class="error">*<?php if(isset($_POST["description"])&&!empty($_POST['description'])){} else{ if(!empty($data[0]['description'])) print_r($data[0]['description']);}?></span>
+                <input type="text" class="form-input" placeholder="Campaign description" name="description" value="<?php echo isset($_POST["description"]) ? $_POST["description"] : '';?>">
             </div>
+
             <div class="formular">
-                <input type="text" class="form-input" placeholder="Location" name="place">
+            <span class="error">*<?php if(isset($_POST["place"])&&!empty($_POST['place'])){} else{ if(!empty($data[0]['place'])) print_r($data[0]['place']);}?></span>
+                <input type="text" class="form-input" placeholder="Location" name="place" value="<?php echo isset($_POST["place"]) ? $_POST["place"] : '';?>">
             </div>
+            
+            <div class="formular">
+            <span class="error">*<?php if(isset($_POST["image"])&&!empty($_POST['image'])){} else{ if(!empty($data[0]['image'])) print_r($data[0]['image']);}?></span>
+                <input type="text" class="form-input" placeholder="Link for a suggestive image" name="image" value="<?php echo isset($_POST["image"]) ? $_POST["image"] : '';?>">
+            </div>
+
             <div class="formular">
                 <button class="form-button" type="submit">Start Campaign</button>
             </div>
             <div class="form-footer">
-            Want to join other campaigns? You can find them here: <a href="http://localhost:1234/gasm/public/campaigns/showcampaigns">Campaigns</a>
+            Want to get involved? See other campaigns here: <a href="http://localhost:1234/gasm/public/campaigns/showCampaigns">Campaigns</a>
             </div>
         </form>
     </div>

@@ -12,10 +12,17 @@ class Campaigns extends Controller
     {
          $this->view('campaigns');
     }
+    // public function index()
+    // {
+    //     $Campaigns = $this->model('Campaigns');
+
+    //     $this->view('home/index', ["Campaigns" => $Campaigns -> products]);
+    // }
     public function showCampaigns()
     {     //$this->post->getPosts();
          //$this->modelCampaigns->getPostById(1);
-         $this->view('showCampaigns');
+         $stock = $this->model('Stock',$this->db);
+         $this->view('showCampaigns',["stock" => $stock -> products]);
     }
     
     public function submit()
@@ -28,6 +35,7 @@ class Campaigns extends Controller
                 'name' => trim($_POST['name']),
                 'description' => trim($_POST['description']),
                 'place' => trim($_POST['place']),
+                'image' => trim($_POST['image']),
                
             ];
            // print_r($data);
@@ -35,7 +43,8 @@ class Campaigns extends Controller
         if( !empty($data['user']) &&
             !empty($data['name']) &&
             !empty($data['description']) &&
-            !empty($data['place'])
+            !empty($data['place'])&&
+            !empty($data['image'])
             
             ){
                // echo 'aici';
@@ -44,6 +53,7 @@ class Campaigns extends Controller
         $this->post->name= $data['name'];
         $this->post->description= $data['description'];
         $this->post->place= $data['place'];
+        $this->post->image= $data['image'];
         
 
         if($this->post->insert()){

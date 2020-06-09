@@ -16,55 +16,57 @@
   body {
     
       margin: 0;
-      background-image:
+      /* background-image:
   radial-gradient(circle at 100% 150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
   radial-gradient(circle at 0    150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
   radial-gradient(circle at 50%  100%, white 10%, rgb(248, 247, 247) 10%, rgb(248, 247, 247) 23%, white 23%, white 30%, rgb(248, 247, 247) 30%, rgb(248, 247, 247) 43%, white 43%, white 50%, rgb(248, 247, 247) 50%, rgb(248, 247, 247) 63%, white 63%, white 71%, transparent 71%, transparent),
   radial-gradient(circle at 100% 50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent),
   radial-gradient(circle at 0    50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent);
-      font-family: 'Candara';
+      font-family: 'Candara'; */
       font-weight: 400;
   }
   
   .content {
+      border: solid 1px;
+      border-color:green;
     text-align: center;
     height: auto;
-    background-color:rgb(248, 247, 247);
-  background-image:
+    /* background-color:#56ab2f; */
+  /* background-image:
   radial-gradient(circle at 100% 150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
   radial-gradient(circle at 0    150%, rgb(248, 247, 247) 24%, white 24%, white 28%, rgb(248, 247, 247) 28%, rgb(248, 247, 247) 36%, white 36%, white 40%, transparent 40%, transparent),
   radial-gradient(circle at 50%  100%, white 10%, rgb(248, 247, 247) 10%, rgb(248, 247, 247) 23%, white 23%, white 30%, rgb(248, 247, 247) 30%, rgb(248, 247, 247) 43%, white 43%, white 50%, rgb(248, 247, 247) 50%, rgb(248, 247, 247) 63%, white 63%, white 71%, transparent 71%, transparent),
   radial-gradient(circle at 100% 50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent),
   radial-gradient(circle at 0    50%, white 5%, rgb(248, 247, 247) 5%, rgb(248, 247, 247) 15%, white 15%, white 20%, rgb(248, 247, 247) 20%, rgb(248, 247, 247) 29%, white 29%, white 34%, rgb(248, 247, 247) 34%, rgb(248, 247, 247) 44%, white 44%, white 49%, transparent 49%, transparent);
-  background-size: 100px 50px;
+  background-size: 100px 50px; */
   }
-  .campaigns-post-wrapper{
+  .blogpost-wrapper{
+      border-color: aquamarine;
     margin-top:15em;
     margin-bottom: 10em;
     display:inline-grid;
     grid-template-columns: auto auto auto;
     grid-gap:50px;
+
     
     
   }
-  
-  .campaigns-post{
-    height: 15em;
-    width: 15em;
-    background-color: #bbb;
-    opacity: 70%;
-    border-radius: 50%;
-    display: inline-block;
-     box-shadow: 2px 2px 2px rgb(55, 56, 59);
-     text-align: center;
+  .blog-post{
+    
+     border-top:solid 2px green;
+    border-left: solid 2px green;
+    border-bottom: solid 2px green;
+    border-right: solid 2px green;
+   
+    
     
   }
-  .campaigns-post:hover{
+  /* .blog-post:hover{
     height: 16em;
     width: 16em;
     opacity:100%
   }
-  
+   */
   /* navigation styles start here */
   
   header {
@@ -268,6 +270,10 @@
     position: relative;
   }
   
+  img{
+   height:12em;
+    width: 12em;
+  }
   
   .fa {
     

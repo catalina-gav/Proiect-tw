@@ -8,6 +8,7 @@ class modelCampaigns
     public $description;
     public $place;
     public $date;
+    public $image;
    
     //constructor with db
     public function __construct($db){
@@ -23,7 +24,8 @@ class modelCampaigns
             name=:name,
             description = :description,
             place= :place,
-            date= :date'
+            date= :date,
+            image= :image'
             ;
         //prepared statement
         $pstmt = $this->conn->prepare($query);
@@ -34,6 +36,7 @@ class modelCampaigns
         $this->description = htmlspecialchars(strip_tags($this->description));
         $this->place = htmlspecialchars(strip_tags($this->place));
         $this->date = htmlspecialchars(strip_tags($this->date)); 
+        $this->image = htmlspecialchars(strip_tags($this->image)); 
         
         //bind parameters
         $pstmt->bindParam(':user',$this->user);
@@ -41,6 +44,7 @@ class modelCampaigns
         $pstmt->bindParam(':description',$this->description);
         $pstmt->bindParam(':place',$this->place);
         $pstmt->bindParam(':date',$this->date);
+        $pstmt->bindParam(':image',$this->image);
         
         
         //execute query
