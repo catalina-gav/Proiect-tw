@@ -2,30 +2,23 @@
 <html>
     <header>
     <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <h1 class="logo">GaSM</h1>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="#"><strong>campaigns</strong></a></li>
+                <li><a href="#"><strong>Events</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
-                <li><a href="#"><strong>Info</strong></a></li>
+                <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <?php if(!isset( $_SESSION['username']))
-        {
-               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
+                <li><a href="http://localhost:1234/gasm/public/logMaprm/index"><strong>Login</strong></a></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
         </label>
-        <?php if(isset( $_SESSION['username']))
-        {
-       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
-    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
-</form>';} ?>
     </header>
     
 <head>
@@ -33,7 +26,7 @@
 </head>
 <body>
     <div class="statistic">
-        <form class="button-area" action="http://localhost:1234/gasm/public/statistics/redirectPage">
+        <form class="button-area" action="http://localhost:1234/gasm/public/statistics/redirectPage/">
             <div class="formular">
           <button class="form-button" type="submit">Show Statistics</button>
           </div>

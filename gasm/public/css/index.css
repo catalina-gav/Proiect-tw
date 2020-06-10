@@ -231,6 +231,18 @@ nav a:hover {
   nav a:hover::before {
     transform: scale(1,1);
   }
+  .border{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-top:6 em;
+    border-left: 3px solid rgb(213, 226, 213);
+    opacity: 0.7;
+    height: auto;
+    margin-block-start: 2em;
+    margin-block-end: 2em;
+    
+  
+  }
 }
 
 footer {
@@ -243,34 +255,29 @@ footer {
     bottom: 0;
     width: 100%;
     background: #56ab2f; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-blend-mode: multiply;
+  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); 
+  background: linear-gradient(to right, #56ab2f, #a8e063); 
     color: white;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     
 }
-footer:hover{
-  background: #56ab2f; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+/* footer:hover{
+  background: #56ab2f; 
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); 
+    background: linear-gradient(to right, #a8e063, #56ab2f); 
+}*/
 .first-footer-part{
-  margin-left: 4em;
+  text-align: center;
 }
 .third-footer-part{
-  margin-right: 4em;
+  text-align: center;
 }
 .second-footer-part{
   text-align: center;
-  position: relative;
-}
+  /*position: relative;*/
+} 
 
-img{
- height:12em;
-  width: 12em;
-}
 
 .fa {
   
@@ -312,14 +319,5 @@ footer ul{
 }
 
 .border{
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  margin-top:6 em;
-  border-left: 3px solid rgb(213, 226, 213);
-  opacity: 0.7;
-  height: auto;
-  margin-block-start: 2em;
-  margin-block-end: 2em;
-  
-
+  display:none;
 }
