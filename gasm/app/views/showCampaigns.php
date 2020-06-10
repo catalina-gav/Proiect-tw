@@ -18,11 +18,11 @@
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>campaigns</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
+               <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
                 <?php if(!isset( $_SESSION['username']))
         {
-               echo '<li><a href="http://localhost:1234/gasm/public/logMaprm/index"><strong>Login</strong></a></li>' ;}?>
+               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
             </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
@@ -30,7 +30,7 @@
     </label>
     <?php if(isset( $_SESSION['username']))
         {
-       echo '<form class="logout" action="http://localhost:1234/gasm/public/logMaprm/logout" method="POST">
+       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
     <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
 </form>';} ?>
 </header>

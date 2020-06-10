@@ -4,13 +4,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
-   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.0/dist/MarkerCluster.Default.css" />
+  
     <!-- Make sure you put this AFTER Leaflet's CSS -->
  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
-   <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js"></script>
+   <script src="https://unpkg.com/leaflet.markercluster@1.4.0/dist/leaflet.markercluster.js"></script>
         <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
         
         
@@ -35,7 +36,7 @@
 <head>
     <div class="gasmMap">
 
-    <title>The Login Form</title>
+    <title>The statistics</title>
 </head>
 <body>
 <div id="map"></div>
@@ -85,33 +86,38 @@ var plasticQs=<?php echo $data[4]; ?>;
 for(i=0;i<lats.length;i++){
     var point=[lats[i],longits[i]];
     var markers = L.markerClusterGroup();
+    var list = [];
     if(plasticQs[i]!=0){
     
-    var plasticMarker = L.marker(point,{icon: redIcon});
-    plasticMarker.bindPopup(
-        "Plastic  /\n/ Cantitatea totala in aceasta zona : " 
+    var marker = L.marker(point,{icon: redIcon});
+    marker.bindPopup(
+        "Plastic - Cantitatea totala in aceasta zona : " 
         + plasticQs[i]
     );
-    markers.addLayer(plasticMarker);
+    list.push(marker);
+    //markers.addLayer(plasticMarker);
     }
     if(glassQs[i]!=0){
     
-    var plasticMarker = L.marker(point,{icon: greenIcon});
-    plasticMarker.bindPopup(
-        "Sticla  /\n/ Cantitatea totala in aceasta zona : " 
+    var marker = L.marker(point,{icon: greenIcon});
+    marker.bindPopup(
+        "Sticla - Cantitatea totala in aceasta zona : " 
         + glassQs[i]
     );
-    markers.addLayer(plasticMarker);
+    list.push(marker);
+    //markers.addLayer(plasticMarker);
     }
     if(paperQs[i]!=0){
     
-    var plasticMarker = L.marker(point,{icon: yellowIcon});
-    plasticMarker.bindPopup(
-        "Hartie  /\n/ Cantitatea totala in aceasta zona : " 
+    var marker = L.marker(point,{icon: yellowIcon});
+    marker.bindPopup(
+        "Hartie - Cantitatea totala in aceasta zona : " 
         + paperQs[i]
     );
-    markers.addLayer(plasticMarker);
+    list.push(marker);
+   // markers.addLayer(plasticMarker);
     }
+    markers.addLayers(list);
     mymap.addLayer(markers);
 
 }

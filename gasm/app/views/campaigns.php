@@ -11,9 +11,9 @@
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
                 <li><a href="#"><strong>Campaigns</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
+               <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/logMaprm/index"><strong>Login</strong></a></li>
+                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-class LogMaprm extends Controller 
+class LoginForm extends Controller 
 {
     public function __construct()
     {
