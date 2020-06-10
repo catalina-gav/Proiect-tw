@@ -24,13 +24,14 @@ class Chart extends Controller
    public function display(){
       
         $data=array();
-
+        $result=$this->post->read($_GET['time'],$_GET['space']);
+       
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
-    
+          
             array_push($data,$row);
             
         }
-
+     
         print_r(json_encode($data));
         
    }
