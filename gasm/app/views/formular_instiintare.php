@@ -28,23 +28,12 @@
     <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>Campaigns</strong></a></li>
+                <li><a href="#"><strong>Events</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <?php if(!isset( $_SESSION['username']))
-        {
-               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
-            </ul>
-        </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-            <span></span>
-        </label>
-        <?php if(isset( $_SESSION['username']))
-        {
-       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
-    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
-            </form>';} ?>
+                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
+                
             </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
@@ -96,7 +85,7 @@
             </select>
             </div>
            <div class="formular">
-            <span class="text"><?php if(isset($data[0]['city'])) print_r($data[0]['city']);?> </span>
+            <span class="error"><?php if(isset($data[0]['city'])) print_r($data[0]['city']);?> </span>
             <br>
             <label for="city">City :</label><br>
             <select name ="city" class="form-input" >
@@ -153,7 +142,7 @@
                 
             </div>
             <span class="error">* <?php printError($data,'trash') ?></span>
-            <input type="number" class="form-input" name="trash" placeholder="Estimated trash quantity(kg)" value="<?php printLast('trash') ?>">
+            <input type="number" class="form-input" name="trash" placeholder="Estimated trash quantity(kg)" min="1" max="500" value="<?php printLast('trash') ?>">
             </div>
             <div class="formular">
                 <button class="form-button" type="submit" value="submit">Submit area Maprmation</button>
