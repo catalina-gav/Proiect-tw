@@ -1,5 +1,4 @@
 <?php
-session_start();
 class Statistics extends Controller
 {
     private $post;
@@ -13,35 +12,35 @@ class Statistics extends Controller
     
     }
     
-    public function index()
-    {
-     if(!isset( $_SESSION['username']))
-     {
-         $this->view('login');
-     }else{
-         $this->view('statistics');
-     }
+   public function index()
+   {
+    $this->view('statistics');
+   }
+   
+   public function redirectPage(){
+    $this->view('show_statistics');
+   }
+   public function exportHelper(){
+    //echo $_POST['space'];
+    if(isset($_POST['space']) && isset($_POST['time'])){
+       $url="http://localhost:1234/gasm/public/statistics/exportCSV?time=". $_POST['time'] . "&space=" . $_POST['space'];
+       header('Location: ' . $url);
+    }else{
+       $this->view("statistics");
     }
-    public function redirectPage()
-    {if(!isset( $_SESSION['username']))
-     {
-         $this->view('login');
-     }else{
-     
-     $this->view('show_statistics');
-     }
-    }
+ }
    public function exportCSV(){
-    if ($_SERVER['REQUEST_METHOD']=="POST"){
+    if (isset($_GET)){
         
     
-       $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+       //$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-        if(isset($_POST['time']) && isset($_POST['space'])){
+        if(isset($_GET['time']) && isset($_GET['space'])){
         $data = [
-            'time' =>trim($_POST['time']),
-            'space' => trim($_POST['space']),
+            'time' =>trim($_GET['time']),
+            'space' => trim($_GET['space']),
         ];
+       
             $filename = "report_csv.csv";
             header('Content-type: application/csv');
             header('Content-Disposition: attachment; filename='.$filename);
@@ -147,10 +146,18 @@ class Statistics extends Controller
                 array('message'=>'No Posts Found')
             );
             }
+            }else {
+                echo "idk";
             }
         }else{
         echo 'There is a problem!';
     }
     } 
+    public function export(){
+        if(isset($_GET)){
+            print_r($_GET['space']);
+        }
+        echo "hey";
+    }
 
 }

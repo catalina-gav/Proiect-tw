@@ -1,5 +1,4 @@
 <?php
-session_start();
 class Chart extends Controller
 {
     public function __construct()
@@ -9,21 +8,30 @@ class Chart extends Controller
         $this->post = $this->model('Post',$this->db);
     }
    public function index()
-   {    $result=$this->post->chart_helper();
-        $json1=[];
-        $json2=[];
-        $json3=[];
-        $json4=[];
-        $json5=[];
-        while($row = $result->fetch(PDO::FETCH_ASSOC)){
-        extract($row);
-        $json1[]=$city;
-        $json2[]=$cartier;
-        $json3[]=(int)$glass_quantity;
-        $json4[]=(int)$paper_quantity;
-        $json5[]=(int)$plastic_quantity;
+   {   
+        $this->view('chart');
+   }
+   public function concatParams(){
+    //echo $_POST['space'];
+    if(isset($_POST['space']) && isset($_POST['time'])){
+       $url="http://localhost:1234/gasm/public/chart/index?time=". $_POST['time'] . "&space=" . $_POST['space'];
+       header('Location: ' . $url);
+    }else{
+       $this->view("statistics");
     }
+ }
+
+   public function display(){
+      
+        $data=array();
+
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
     
-        $this->view('chart',json_encode($json1),json_encode($json2),json_encode($json3),json_encode($json4),json_encode($json5));
+            array_push($data,$row);
+            
+        }
+
+        print_r(json_encode($data));
+        
    }
 }

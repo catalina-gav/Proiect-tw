@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 class Form extends Controller 
 {
     public function __construct()

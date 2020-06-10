@@ -1,5 +1,4 @@
 <?php
-session_start();
 class Map extends Controller
 {
    public function __construct()
