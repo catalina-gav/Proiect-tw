@@ -69,9 +69,7 @@ class LoginForm extends Controller
             header("Location: http://localhost:1234/gasm/public/home/index");
             exit();
           }
-           /*echo json_encode(
-                array('message'=>'PostLogin Created')
-            );*/
+           
         }else{
              $data = [
                 'usernameErr' =>'',
@@ -79,10 +77,7 @@ class LoginForm extends Controller
             ];
                 $data['usernameErr']='Username/Password wrong !';
             $this->view('login',$data);
-          /* echo json_encode(
-                array('message'=>'PostLogin Not Created')
-            );
-            */
+         
         }
     }
     }

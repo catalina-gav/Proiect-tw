@@ -12,6 +12,7 @@ body{
     background:#00C853;
     float: right;
 }
+
 .meniu{
     width:250px;
     height: 700px;
@@ -105,6 +106,11 @@ li a:hover{
         width: auto;
         float: none;
         height: 400px;
+    }
+    ul li{
+        padding:20px;
+        border-bottom:2px solid #00C853 ;
+        list-style: none;
     }
     
     #data{

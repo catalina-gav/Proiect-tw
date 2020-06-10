@@ -39,12 +39,37 @@ window.onclick = function(event) {
 }
 </script>
 <script>
-    function deleteCampaign()
+    function showLogo(){
+   document.getElementById("showdata").innerHTML="<div style='color:black; font-size:10em;'>GaSM</div>";
+    }
+  </script>
+<script>
+    function ShowCampaign()
     { 
-        document.getElementById("showdata").innerHTML="<input type="numeric" id="select">";
+        var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("showdata").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("POST","http://localhost:1234/gasm/public/getcampaigns/campaigns",true);
+  xmlhttp.send();
         
     }
     </script>
+<script>
+    function DeleteCampaign()
+    {  var x = document.getElementById("idCampaign").value;
+        var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("showdata").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","http://localhost:1234/gasm/public/getcampaigns/delete?id="+x, true);
+  xmlhttp.send();
+    }
+        </script>
     </head>
  <body>
      <div class="header">
@@ -52,7 +77,7 @@ window.onclick = function(event) {
 </div>
 <div class="meniu">
 <ul>
-    <li><a href="#" >🏡 Dashboard</a></li>
+    <li><a href="#"id ="logoId" onclick="showLogo()" >🏡 Dashboard</a></li>
     <li><a href="#" id ="user" onclick="showUsers()">👨‍👨‍Users</a></li>
     <li><a href="#" onclick="showPages()" class="pages">Pages</a>
          <div id="showlist" class="list-content">
@@ -62,7 +87,8 @@ window.onclick = function(event) {
                <a href="http://localhost:1234/gasm/public/map">Map</a>
                 <a href="http://localhost:1234/gasm/public/statistics">Statistics</a>
     </div></li>
-    <li><a href="#" id="campanie" onclick="deleteCampaign()">Delete Campaign</a></li>
+    <li><a href="#" id="campanie" onclick="ShowCampaign()">Show/Delete Campaigns</a></li>
+    <li><a href="http://localhost:1234/gasm/public/admin/logout">Logout</a></li>
 </ul>
 </div>
 

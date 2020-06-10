@@ -16,4 +16,12 @@ class Admin extends Controller
         $this->view('admin');
     }
    }
+   public function logout()
+   {
+    if(isset( $_SESSION['username'])&&strcmp( $_SESSION['username'],'admin')==0)
+    {  session_unset();
+        session_destroy();
+        $this->view('login');
+    }
+   }
 }

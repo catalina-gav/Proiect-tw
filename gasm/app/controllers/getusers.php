@@ -12,10 +12,10 @@ class GetUsers extends Controller
     {   
        if($this->post->select())
        {
-
+                return true;
        }
        
-
+    return false;
     }
 }
 ?>

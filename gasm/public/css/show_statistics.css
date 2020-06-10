@@ -61,16 +61,14 @@ body{
    background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1140px) {
     .statistics {
-    
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
         background: #fafafa;
-       
+        justify-content: center;
+    align-items: center;
     }
     .statistic-form{
     
@@ -84,16 +82,11 @@ body{
        padding-top: 7em;
    }
    .show{
-      
-   width: 100%;
-   height: 50%;
-   border: 10px solid #56ab2f;
-   padding: 1.5rem;
+       width:auto;
+    border: none;
+    padding: 0;
    right: auto;
-   bottom:0;
-   background: #fafafa;
-   background-image: url(https://cdn.pixabay.com/photo/2016/08/02/18/27/statistic-1564428_960_720.png);
-   background-size: contain;
-   background-repeat: no-repeat;
+   background:none;
+   background-image: none;
 }
 }
