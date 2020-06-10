@@ -108,13 +108,13 @@ class Post
         }
         
     } 
-    public function chart_helper()
+  /*   public function chart_helper()
     {
         $query= 'SELECT city,cartier,sum(ifnull(glassQ,0)) as glass_quantity,sum(ifnull(paperQ,0)) as paper_quantity,sum(ifnull(plasticQ,0)) as plastic_quantity FROM ' . $this->table . ' group by cartier,city' ;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
-    }
+    } */
     public function map_data(){
         $query= 'SELECT city,cartier,sum(ifnull(glassQ,0)) as glass_quantity,sum(ifnull(paperQ,0)) as paper_quantity,sum(ifnull(plasticQ,0)) as plastic_quantity,lat,longit FROM ' . $this->table . ' group by cartier,city' ;
         $stmt = $this->conn->prepare($query);
