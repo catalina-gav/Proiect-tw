@@ -28,11 +28,6 @@ class LoginForm extends Controller
     public function submit()
     {
 
-       /* if(isset( $_SESSION['username']))
-        {
-            $data['login']='You are already logged in! If you want to change account got to logout button!';
-            $this->view('login',$data);
-        }*/
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             //sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -62,16 +57,17 @@ class LoginForm extends Controller
             !empty($data['username']) &&
             !empty($data['password']) 
             ){
-               // echo 'aici';
         $this->post->username= $data['username'];
         $this->post->password= $data['password'];
         if($this->post->select()){
           $_SESSION['username']=$data['username'];
           if(strcmp($data['username'],'admin')==0)
           { 
-              $this->view('admin');
+            header("Location: http://localhost:1234/gasm/public/admin");
+            exit();
           }else{
-          $this->view('home/index');
+            header("Location: http://localhost:1234/gasm/public/home/index");
+            exit();
           }
            /*echo json_encode(
                 array('message'=>'PostLogin Created')

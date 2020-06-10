@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Chart extends Controller
 {
     public function __construct()

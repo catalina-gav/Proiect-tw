@@ -14,8 +14,8 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
             <ul>
-                <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="#"><strong>Events</strong></a></li>
+            <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
+                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>Campaigns</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
