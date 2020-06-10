@@ -22,6 +22,44 @@ class PostRegister
     public function __construct($db){
         $this->conn=$db;
     }
+    public function existUsername()
+    {
+           //create query
+           $query='SELECT username FROM ' . $this->table . '
+           WHERE username=:username';
+           $pstmt = $this->conn->prepare($query);
+           $this->username = htmlspecialchars(strip_tags($this->username));
+           $pstmt->bindParam(':username',$this->username);
+           //execute query
+           if($pstmt->execute()){
+               $row=$pstmt->fetch(PDO::FETCH_ASSOC);
+               if(!empty($row)){
+               return true;
+               }
+               return false;
+           }
+           return false;
+    }
+    public function existEmail()
+    {
+           //create query
+           $query='SELECT email FROM ' . $this->table . '
+           WHERE email=:email';
+           $pstmt = $this->conn->prepare($query);
+           $this->email = htmlspecialchars(strip_tags($this->email));
+           $pstmt->bindParam(':email',$this->email);
+           //execute query
+           if($pstmt->execute()){
+               $row=$pstmt->fetch(PDO::FETCH_ASSOC);
+               if(!empty($row)){
+               return true;
+               }
+               else{
+               return false;
+               }
+           }
+           return false;
+    }
     //get post
     public function insert()
     {
@@ -61,18 +99,11 @@ class PostRegister
         $pstmt->bindParam(':password',$this->password);
         //execute query
         if($pstmt->execute()){
-            /*$mail=new PHPMailer();
-              $mail->setFrom('tciobanu081@gmail.com','GaSM User Registration');
-              $mail->addAddress($this->email);
-              $mail->isHTML(true);
-              $mail->Subject='GaSM Registration';
-              $mail->Body='GaSM Registration Success';
-             $mail->send();*/
             return true;
         }
 
         // Print error if something goes wrong
-        printf("Error: %s.\n",$pstmt->error);
+       // printf("Error: %s.\n",$pstmt->error);
         return false;
     }
 }

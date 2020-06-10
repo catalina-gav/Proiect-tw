@@ -10,13 +10,12 @@ class LoginForm extends Controller
     }
     public function index()
     {  
-       /* if(isset( $_SESSION['username']))
+        if(isset( $_SESSION['username']))
         {
-            $data['login']='You are already logged in! If you want to change account got to logout button!';
-            $this->view('login',$data);
-        }else{*/
+            $this->view('/home/index');
+        }else{
         $this->view('login');
-        //}
+        }
     }
     public function logout()
     {
@@ -29,11 +28,11 @@ class LoginForm extends Controller
     public function submit()
     {
 
-        if(isset( $_SESSION['username']))
+       /* if(isset( $_SESSION['username']))
         {
             $data['login']='You are already logged in! If you want to change account got to logout button!';
             $this->view('login',$data);
-        }
+        }*/
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             //sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -68,7 +67,12 @@ class LoginForm extends Controller
         $this->post->password= $data['password'];
         if($this->post->select()){
           $_SESSION['username']=$data['username'];
+          if(strcmp($data['username'],'admin')==0)
+          { 
+              $this->view('admin');
+          }else{
           $this->view('home/index');
+          }
            /*echo json_encode(
                 array('message'=>'PostLogin Created')
             );*/
@@ -79,9 +83,10 @@ class LoginForm extends Controller
             ];
                 $data['usernameErr']='Username/Password wrong !';
             $this->view('login',$data);
-           echo json_encode(
+          /* echo json_encode(
                 array('message'=>'PostLogin Not Created')
             );
+            */
         }
     }
     }

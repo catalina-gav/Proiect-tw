@@ -17,11 +17,7 @@ class RegisterForm extends Controller
     }
     public function submit()
     {   
-        if(isset( $_SESSION['username']))
-        {
-            session_destroy();
-        }
-        $this->view('register');
+      
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             //sanitize post data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -87,7 +83,6 @@ class RegisterForm extends Controller
             !empty($data['birth_date']) &&
             !empty($data['password']) 
             ){
-            //    echo 'aici';
             
         $this->post->first_name = $data['first_name'];
         $this->post->last_name= $data['last_name'];
@@ -98,13 +93,21 @@ class RegisterForm extends Controller
         $this->post->birth_date=$data['birth_date'];
         $this->post->password= $data['password'];  
         
+        if($this->post->existUsername())
+        {
+          $data['username']='Username already used!';
+          $data['email']='';
+          $this->view('register',$data);
+        }
+       else if($this->post->existEmail())
+        {
+          $data['email']='Email already used !';
+          $data['username']='';
+          $this->view('register',$data);
+        }
 
-        if($this->post->insert()){
+       else  if($this->post->insert()){
             $this->view('login');
-          //  header("Location: http://localhost:1234/gasm/public/loginForm/index");
-            echo json_encode(
-                array('message'=>'PostRegister Created')
-            );
         }else{
             echo json_encode(
                 array('message'=>'PostRegister Not Created')

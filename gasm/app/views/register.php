@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>campaigns</strong></a></li>
+                <li><a href="#"><strong>Events</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
@@ -32,7 +32,7 @@
         {
        echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
     <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
-</form>';} ?>
+            </form>';} ?>
     </header>
 <body>
     <div class="wrap">
@@ -51,7 +51,7 @@
                 <input type="text" class="form-input" placeholder="Last name" name="last_name"  value="<?php echo isset($_POST["last_name"]) ? $_POST["last_name"] : '';?>">
             </div>
             <div class="formular">
-            <span class="error">*<?php if(isset($_POST["username"])&&!empty($_POST['username'])){} else{ if(!empty($data[0]['username'])) print_r($data[0]['username']);}?></span>
+            <span class="error">*<?php if(isset($_POST["username"])&&!empty($_POST['username'])&&empty($data[0]['username'])){} else if(isset($_POST["username"])&&!empty($_POST['username'])&&!empty($data[0]['username'])){print_r($data[0]['username']);} else{ if(!empty($data[0]['username'])) print_r($data[0]['username']);}?></span>
                 <input type="text" class="form-input" placeholder="Username" name="username" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : '';?>">
             </div>
             <div class="formular"> 
@@ -64,7 +64,7 @@
                 <input type="text" class="form-input" placeholder="Organization" name="organization">
             </div>
             <div class="formular">
-            <span class="error">*<?php if(isset($_POST["email"])&&!empty($_POST['email'])){} else{ if(!empty($data[0]['email'])) print_r($data[0]['email']);}?></span>
+            <span class="error">*<?php if(isset($_POST["email"])&&!empty($_POST['email'])&&empty($data[0]['email'])){} else if(isset($_POST["email"])&&!empty($_POST['email'])&&!empty($data[0]['email'])){print_r($data[0]['email']);} else{ if(!empty($data[0]['email'])) print_r($data[0]['email']);}?></span>
                 <input type="email" class="form-input" placeholder="E-mail" name="email"  value="<?php echo isset($_POST["email"]) ? $_POST["email"] : '';?>">
             </div>
             <div class="formular">

@@ -1,0 +1,136 @@
+body{
+    margin:0;
+    border: 0;
+}
+.header{
+    top:0;
+    width:100%;
+    height:100px;
+    background-color:#00C853;
+}
+.admin-icon{
+    background:#00C853;
+    float: right;
+}
+.meniu{
+    width:250px;
+    height: 700px;
+    background-color: black;
+    float:left;
+}
+.icon{
+    background: black;
+}
+ul li{
+    padding:30px;
+    border-bottom:2px solid #00C853 ;
+    list-style: none;
+}
+ul li:hover{
+    background: #00C853;
+    color:black;
+}
+li a{
+    text-decoration: none;
+  font-size: 1.2rem;
+  color:white;
+}
+li a:hover{
+    text-decoration: none;
+  font-size: 1.2rem;
+  color:black;
+}
+
+#data{
+    height: 700px;
+    background: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#showdata{
+    height: 700px;
+    background: white;
+}
+.footer{
+    width:100%;
+    height:100px;
+    display: flex;
+    background-color:#00C853;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    color:white;
+    font-size: 3rem;
+}
+
+  .pages {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .list-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+  }
+  
+  .list-content a {
+    color: black;
+    padding: 12px 16px;
+    border : 1px solid black;
+    text-decoration: none;
+    display: block;
+   
+  }
+  .list-content a:hover {
+  
+    background-color: #00C853;
+    color:white;
+  }
+  .pages a:hover {background-color: #00C853;}
+  
+  .show {display: block;}
+  @media screen and (max-width: 600px) {        
+    .header{
+        top:0;
+        width:auto;
+        height:100px;
+        background-color:#00C853;
+    }
+    .meniu{
+        width: auto;
+        float: none;
+        height: 400px;
+    }
+    
+    #data{
+        position: relative;
+        width: auto;
+        height: 900px;
+        background: #E0E0E0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #showdata{
+        position: absolute;
+        width:auto;
+        display:flex;
+        align-items: center;
+        font-size: medium;
+    }
+    .footer{
+        width:auto;
+        height:100px;
+        display: flex;
+        background-color:#00C853;
+        justify-content: center;
+        align-items: center;
+    }
+      }
+    

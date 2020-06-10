@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>campaigns</strong></a></li>
+                <li><a href="#"><strong>Events</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
                 <li><a href="#"><strong>Info</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
@@ -94,4 +94,4 @@
      </ul>   
     </div>
 </footer>
-</html>s
+</html>
