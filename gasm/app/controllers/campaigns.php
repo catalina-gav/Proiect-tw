@@ -11,17 +11,16 @@ class Campaigns extends Controller
     }
     public function index()
     {
+     if(!isset( $_SESSION['username']))
+     {
+        header('Location: http://localhost:1234/gasm/public/campaigns/showCampaigns');
+     }else{
          $this->view('campaigns');
+     }
     }
-    // public function index()
-    // {
-    //     $Campaigns = $this->model('Campaigns');
-
-    //     $this->view('home/index', ["Campaigns" => $Campaigns -> products]);
-    // }
+   
     public function showCampaigns()
-    {     //$this->post->getPosts();
-         //$this->modelCampaigns->getPostById(1);
+    {     
          $stock = $this->model('Stock',$this->db);
          $this->view('showCampaigns',["stock" => $stock -> products]);
     }

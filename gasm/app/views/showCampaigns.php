@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Statistics</title>
+        <title>Campaigns</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/show_statistics.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/index.css">
     </head>
 <header>
     <link rel="stylesheet" type="text/css" href="http://localhost:1234/gasm/public/css/showCampaigns.css">
@@ -17,7 +18,7 @@
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>Campaigns</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
+                
                <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
                 <?php if(!isset( $_SESSION['username']))
@@ -53,6 +54,7 @@
 </div>
 </body>
 
+
 <footer>
     <div class="first-footer-part">
         <h3>👨‍👨‍👧‍👧Contact details:</h3>
@@ -65,13 +67,11 @@
      </ul>   
     </div>
     <span class='border'></span>   
+  
     <div class="second-footer-part">
-            <h3>😄Subscribe to our newsletter:</h1>
-            <input type="email" class="form-input" placeholder="E-mail">
-            <br>
-            <br>
-            <button class="btn">Subscribe</button>  
-     </ul>   
+            <h2>🌻Recycle the present🌻</h2>
+            <h3>🌻Save the future🌻</h3>
+
     </div>
     <span class='border'></span>   
     <div class="third-footer-part">
@@ -81,8 +81,7 @@
         <a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"></a>
         <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a>
     
-        </li>   
-     </ul>   
+ 
     </div>
 </footer>
 </html>

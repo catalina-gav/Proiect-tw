@@ -45,11 +45,9 @@
     margin-top:15em;
     margin-bottom: 10em;
     display:inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
     grid-gap:50px;
-
-    
-    
+  
   }
   .blog-post{
     
@@ -170,11 +168,19 @@
   }
   
   
-  @media screen and (min-width: 980px) {
+  @media screen and (min-width: 800px) {
     .nav-toggle-label {
       display: none;
     }
+    .blogpost-wrapper{
+      border-color: aquamarine;
+    margin-top:15em;
+    margin-bottom: 10em;
+    display:inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-gap:50px;
     
+  }
   
     header {
       display: grid;
@@ -237,38 +243,33 @@
   }
   
   footer {
-      display: flex;
-      position: relative;  
-      flex-direction: row;
-      border-top: 2px solid solid rgb(213, 226, 213);
-      
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background: #56ab2f; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background-blend-mode: multiply;
-      color: white;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      
-  }
-  footer:hover{
+    display: flex;
+    position: relative;  
+    flex-direction: row;
+    border-top: 2px solid solid rgb(213, 226, 213);
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background: #56ab2f; /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  .first-footer-part{
-    margin-left: 4em;
-  }
-  .third-footer-part{
-    margin-right: 4em;
-  }
-  .second-footer-part{
-    text-align: center;
-    position: relative;
-  }
+  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); 
+  background: linear-gradient(to right, #56ab2f, #a8e063); 
+    color: white;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+.first-footer-part{
+  text-align: center;
+}
+.third-footer-part{
+  text-align: center;
+}
+.second-footer-part{
+  text-align: center;
+  /*position: relative;*/
+} 
   
   img{
    height:12em;

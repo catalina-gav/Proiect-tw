@@ -1,4 +1,7 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 session_start();
 class RegisterForm extends Controller 
 {
@@ -107,6 +110,20 @@ class RegisterForm extends Controller
         }
 
        else  if($this->post->insert()){
+        $mail=new PHPMailer();
+        $mail->isSMTP();
+        $mail->SMTPSecure = 'ssl';
+$mail->SMTPAuth = true;
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 465;
+$mail->Username = 'reviewinator.noreply@gmail.com';
+$mail->Password = 'WhoCouldPossiblyHateSarmale?';
+          $mail->setFrom('reviewinator.noreply@gmail.com','GaSM User Registration');
+          $mail->addAddress($this->post->email);
+          $mail->isHTML(true);
+          $mail->Subject='GaSM Registration';
+          $mail->Body='GaSM Registration Success';
+         $mail->send();
             $this->view('login');
         }else{
             echo json_encode(

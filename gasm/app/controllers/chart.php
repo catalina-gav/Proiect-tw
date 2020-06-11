@@ -1,4 +1,5 @@
 <?php
+
 class Chart extends Controller
 {
     public function __construct()

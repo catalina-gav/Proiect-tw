@@ -9,12 +9,24 @@
         <nav>
             <ul>
                 <li><a href="http://localhost:1234/gasm/public/"><strong>🏡Home</strong></a></li>
-                <li><a href="#"><strong>Events</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/about"><strong>About</strong></a></li>
+                <li><a href="http://localhost:1234/gasm/public/campaigns"><strong>Campaigns</strong></a></li>
+               
                 <li><a href="http://localhost:1234/gasm/public/map"><strong>Map</strong></a></li>
                 <li><a href="http://localhost:1234/gasm/public/statistics"><strong>Statistics</strong></a></li>
-                <li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>
+                <?php if(!isset( $_SESSION['username']))
+        {
+               echo '<li><a href="http://localhost:1234/gasm/public/loginForm/index"><strong>Login</strong></a></li>' ;}?>
             </ul>
+        </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <?php if(isset( $_SESSION['username']))
+        {
+       echo '<form class="logout" action="http://localhost:1234/gasm/public/loginForm/logout" method="POST">
+    <input type="image"  src="https://image.flaticon.com/icons/svg/589/589061.svg" width="50" height="50">
+</form>';} ?>
+            
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
             <span></span>
@@ -37,6 +49,7 @@
     </div>
 </body>
 
+
 <footer>
     <div class="first-footer-part">
         <h3>👨‍👨‍👧‍👧Contact details:</h3>
@@ -49,13 +62,11 @@
      </ul>   
     </div>
     <span class='border'></span>   
+  
     <div class="second-footer-part">
-            <h3>😄Subscribe to our newsletter:</h1>
-            <input type="email" class="form-input" placeholder="E-mail">
-            <br>
-            <br>
-            <button class="btn">Subscribe</button>  
-     </ul>   
+            <h2>🌻Recycle the present🌻</h2>
+            <h3>🌻Save the future🌻</h3>
+
     </div>
     <span class='border'></span>   
     <div class="third-footer-part">
@@ -65,8 +76,7 @@
         <a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"></a>
         <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a>
     
-        </li>   
-     </ul>   
+ 
     </div>
 </footer>
 </html>

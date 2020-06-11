@@ -1,0 +1,47 @@
+.leaflet-top {
+    bottom: 0;
+    }
+    
+.leaflet-top .leaflet-control-zoom {
+    top:50%;
+    transform: translateY(-50%);
+}
+
+#map {
+        height : 800px;
+        width:400;
+}
+#space{
+    margin:4em;
+}
+#chart1{
+    width: 40%;
+    margin:auto
+}
+#chart2{
+    width: 40%;
+    margin:auto
+}
+#chart3{
+    width: 40%;
+    margin:auto
+}
+#download-html{
+    margin:auto;
+}
+#download-pdf{
+    margin:auto;
+}
+.clasification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}

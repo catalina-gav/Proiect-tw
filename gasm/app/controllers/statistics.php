@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Statistics extends Controller
 {
     private $post;
@@ -12,14 +13,25 @@ class Statistics extends Controller
     
     }
     
-   public function index()
-   {
-    $this->view('statistics');
-   }
+    public function index()
+    {
+     if(!isset( $_SESSION['username']))
+     {
+         $this->view('login');
+     }else{
+         $this->view('statistics');
+     }
+    }
+    public function redirectPage()
+    {if(!isset( $_SESSION['username']))
+     {
+         $this->view('login');
+     }else{
+
+     $this->view('show_statistics');
+     }
+    }
    
-   public function redirectPage(){
-    $this->view('show_statistics');
-   }
    public function exportHelper(){
     //echo $_POST['space'];
     if(isset($_POST['space']) && isset($_POST['time'])){

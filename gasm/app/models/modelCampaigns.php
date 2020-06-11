@@ -35,7 +35,7 @@ class modelCampaigns
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->description = htmlspecialchars(strip_tags($this->description));
         $this->place = htmlspecialchars(strip_tags($this->place));
-        $this->date = htmlspecialchars(strip_tags($this->date)); 
+        $this->date =date("Y/m/d");
         $this->image = htmlspecialchars(strip_tags($this->image)); 
         
         //bind parameters
