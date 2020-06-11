@@ -68,7 +68,7 @@
             if(quantities[i]>300){
                 jsonCity=JSON.parse('{ " Dirtiest places  " : " ' + arrData[i] +'" ,"  In between  ": "---", "  Cleanest places " : "---" } ');
                 cities.push(jsonCity);
-            }else if(quantities[i]>20 && quantities[i]<50){
+            }else if(quantities[i]<50){
                 jsonCity=JSON.parse('{ " Dirtiest places  " : "---" ,"  In between  ": "---", "  Cleanest places  " : " ' + arrData[i]  + '" } ');
                 cities.push(jsonCity);
             }else{
