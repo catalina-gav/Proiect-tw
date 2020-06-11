@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="keywords" content="project, infoiasi, web">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Scholarly HTML</div>
+      </div>
+      <h1>Scholarly HTML for GaSM</h1>
+    </header>
+    <div role="contentinfo">
+      <dl>
+        <dt>Echipa</dt>
+        <dd>
+          Ciobanu Tamara & Gavrilovici Catalina & Mengheres Mihaela
+        
+        </dd>
+        <dt>Template folosit pentru acest document</dt>
+        <dd>
+          <a href="https://github.com/w3c/scholarly-html/issues">https://github.com/w3c/scholarly-html</a>
+        </dd>
+        <dt>Discussion Group</dt>
+        <dd>
+          The <a href="https://www.w3.org/community/scholarlyhtml/">Scholarly HTML Community
+          Group</a> at <a href="https://w3.org/">W3C</a>
+          (<a href="https://lists.w3.org/Archives/Public/public-scholarlyhtml/">email archives</a>)
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Scop</h2>
+      <p>
+        Acest document este realizat pentru a oferi indicatii in ceea ce priveste utilizarea aplicatiei web Garbage Smart Monitor. Aplicatia poate fi accesata la acest <a href=https://github.com/catalina-gav/Proiect-tw>link.</a> </p>
+      
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introducere</h2>
+       <p>Aplicatia GaSm vine in sprijinul cetatenilor si a autoritatilor, oferind urmatoarele functionalitati:  </p>
+
+      <ul>
+        <li>Gestioneaza informațiile privitoare la colectarea,
+          sortarea și reciclarea gunoiului – pe categorii: hârtie, plastic si sticla – la nivelul cetățeanului, personalului autorizat și factorilor de decizie.
+       </li>
+        <li>Ofera suport pentru raportarea de către utilizatori a locurilor unde s-a acumulat o cantitate substanțială de gunoi, în vederea descongestionării.</li>
+        <li>
+          Genereaza, la cererea utilizatorului, rapoarte numerice și grafice – disponibile în formatele HTML, CSV și PDF – referitoare la situația actuală la nivel de cartier/localitate,pe unitate de timp (zi, săptămână, lună).</p>
+        
+        </li>
+        <li>Ofera suport pentru inițierea unor campanii de ecologizare.</li>
+       
+      </ul>
+    </section>
+    <section id="structure">
+      <!-- review? -->
+      <h2>Autentificarea si inregistrarea utilizatorului</h2>
+      <p>
+       Utilizatorii acestei aplicatii se impart in 2 categorii: cetateni si personal autorizat. 
+       Persoanele care sunt inregistrate pot accesa informatiile disponibile in sistemul aplicatiei, pot raporta zonele in care s-a acumulat gunoi si pot incepe campanii de ecologizare.
+      </p><p> Persoanele care nu sunt inregistrate pot vedea harta cu zonele raportate si tipul de gunoi din zona, dar nu au acces la toate facilitatile aplicatiei.
+       </p>
+       <p>De asemenea exista un utilizator cu rol de admin, care poate vedea utilizatorii inregistrati si poate sterge campanii care nu mai sunt relevante, acesta avand un dashboard separat de cel al utilizatorului obisnuit.
+      </p>
+      <section id="Root">
+        <!-- review? -->
+        <h3>Inregistrarea utilizatorului</code></h3>
+        <p>
+          Un utilizator se poate inregistra prin completarea formularului de pe pagina de Sign up, in care trebuie sa isi completeze datele personale:
+           nume, prenume,e-mail, data de nastere sa isi aleaga un username 
+          care nu este deja folosit de alt utilizator al aplicatiei si si o parola. Inregistrarea se face in urma apasarii butonului de REGISTER.Daca utilizatorul foloseste un username indisponibil sau un email invalid, acesta este atentionat si rugat sa introduca alte date, care sunt corecte.
+        </p>
+        <img src="register_user.png" alt="register user">
+      </section>
+      <section id="article">
+        <!-- review? -->
+        <h3>Autentificarea </h3>
+        <p>
+          Pentru autentificare utilizatorul care si-a facut un cont in prealabil, urmaand pasii din inregistrare, isi introduce username-ul si parola si apasa pe butonul Login.
+          In caz de datele introduse sunt gresite, acesta este atentionat si le poate introduce din nou.</p>
+          <p>
+            Daca utilizatorul nu este inregistrat, dispune de un buton de Sign up care il va duce pe pagina de inregistrare.
+        </p>
+        <img src="login_user.png" alt="login user">
+      
+      </section>
+     
+      </section>
+      <section id="inline">
+        <!-- review? -->
+        <h3>Inregistrarea/autentificarea administratorului paginii</h3>
+        <p>
+          Inregistrarea administratorului nu se poate face, acesta avand un cont unic ce poate fi utilizat de mai multe persoane cu rol administrativ.
+          Autentificarea se face in acelasi mod cu cea a utilizatorilor obisnuiti, insa cu adresa si parola prestabilite.Contul administratorului are acces la un dashboard separat.
+        </p>
+        <p><img src="admin_login.png" alt="admin login"></p>
+       <p> <img src="admin_dashboard.png" alt="admin dashboard"></p>
+        
+      </section>
+    
+      
+    </section>
+    <section id="semantics">
+      <!-- review? -->
+      <h2>Paginile aplicatiei</h2>
+      <p>
+       Aplicatia este structurata in mai multe pagini cu functionalitati diferite.
+      </p>
+
+      
+      
+      <section id="person-org">
+        <!-- review? -->
+        <h3>Pagina pentru raportarea zonelor cu gunoaie</h3>
+        <p>
+         Aceasta pagina contine un formular pe care utilizatorul il completeaza pentru a semnala zonele de unde trebuie colectat gunoiul.Acesta trebuie sa specifice tipul de gunoi si cantitatea aproximativa a acestuia pentru ca persoanele autorizate sa poata merge cu utilajele potrivite pentru a-l prelua(cantitate maxima: 500kg).</p>
+       <p>  Utilizatorul trebuie sa aleaga un judet si o localitate din acel judet.Daca localitatea nu apartine judetului mentionat/nu e valid, datele nu se transmit, iar utilizatorul este samnalat.
+        </p>
+        <p><img src="statistics_form.png" alt="statistics form"></p>
+        <p><img src="statistics_form2.png" alt="statistics form2"></p>
+ 
+ 
+      </section>
+      <section id="typing-sections">
+        <!-- review? -->
+        <h3>Pagini pentru vizualizarea si descarcarea statisticilor</h3>
+        <p>
+         Datorita formularelor completate de utilizatori, se pot face statistici pe orease/localitati, zile/saptamani/ani, in diferite formate ce pot fi descarcate.
+        </p>
+        <p>
+          In aceasta prima pagina utilizatorul poate descarca in format CSV statistici generate din datele trimise de catre utilizatori.
+          Statisticile sunt pe pe orase sau pe localitati si pot fi descarcate atat in format numeric.
+         </p>
+         <p><img src="statistics1.png" alt="statistics form"></p>
+        <p>Sunt generate, la cerera utilizatorului, chart-uri cu situatia pe zone, iar aceste chart-uri sunt de mai multe tipuri:pie, line, bar. </p>
+        <p><img src="statistics2.png" alt="statistics form"></p>
+        <p><img src="statistics3.png" alt="statistics form"></p>
+      </section>
+
+        
+        <p>Pe pagina unde se gasesc statisticile grafice se gaseste si un tabel in care se evidentiaza zonele cele mai curate/mizere</p>
+       
+    
+    <section id="scholarly-article">
+      <!-- review? -->
+      <h3>Pagina pentru initierea de campanii de sensibilizare</h3>
+          <p>
+           Aici utilizatorii inregistrati pot face postari in care invita alti utilizatori la evenimente de ecologizare, recilare sau deschid diferite subiecte legate de curatenia orasului lor.
+           Asemantor celorlate formulare, acesta trebuie completat conform indicatiilor si trimis prin butonul "Start a campaign"
+          </p>
+          <p><img src="campanie1.png" alt="map"></p>
+
+    </section>
+  
+  <section id="hypermedia">
+    <h4>Pagina pentru vizualizarea campaniilor</h4>
+    <p>
+      Campaniile postate de utilizatori sunt postate aici imediat ce sunt trimise. Acestea pot fi sterse de catre administrator daca nu mai sunt relevante.
+    </p>
+    <p><img src="campanie2.png" alt="map"></p>
+  </section>
+    <section id="roles">
+      <!-- review? -->
+      <h3>Harta</h3>
+      
+      <p>
+        Aplicatia ofera o harta pe care se sunt indicate prin markeri zonele de unde se poate ridica gunoiul.Markerii contin informatii si despre cantitatea si tipul gunoaielor.
+        Markerele sunt de diferite culori pentru a identifica fiecare tip de gunoi pe zona. In momentul cand utilizatorul intra pe pagina hartii, aceasta este setata pentru a vizualiza Romania.
+        Utilizatorului i se va cere permisiunea pentru a-i fi accesata locatia, caz in care se va face zoom pe aceasta.
+      </p>
+      <p>Harta poate fi vazuta si de persoanele care nu sunt inregistrate in aplicatie.</p>
+      <p><img src="harta.png" alt="map"></p>
+    </section>
+    <section id="processing-model">
+      <h3>Pagina principala</h3>
+      <p>
+       Pagina principala a aplicatiei consta intr-o pagina ce descrie rolul aplicatiei si informatii relevante pentru utilizator.
+      </p>
+      <p><img src="principala.png" alt="map"></p>
+    </section>
+    </section>
+    <section id="acks">
+      <!-- review? -->
+      <h2>Validarea informatiilor introduse</h2>
+      <p>
+        In formulare de pe paginile de login,register,campanii si statistici, daca utilizatorul va introduce date gresite/invalide/indisponibile, acesta va fi atentionat prin mesaje de eroare.  
+      </p>
+      <p><img src="error1.png" alt="map"></p>
+      <p><img src="error2.png" alt="map"></p>
+    </section>
+    <section id="acks">
+      <!-- review? -->
+      <h2>Delogarea din sistem</h2>
+      
+      <p>
+       Utilizatorul poate da logout folosindu-se de butonul din partea dreapta-sus, actiune in urma careia nu va mai putea accesa statisticile si celelalte caracteristici permise numai utilizatorului logat.
+      </p>
+      <p><img src="delogare.png" alt="map"></p>
+    </section>
+  </body>
+</html>
