@@ -23,7 +23,7 @@ class Chart extends Controller
  }
 
    public function display(){
-      
+      if ($_SERVER['REQUEST_METHOD']=='GET'){
         $data=array();
         $result=$this->post->read($_GET['time'],$_GET['space']);
        
@@ -36,4 +36,5 @@ class Chart extends Controller
         print_r(json_encode($data));
         
    }
+
 }
