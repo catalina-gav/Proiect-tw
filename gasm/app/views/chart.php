@@ -112,16 +112,19 @@
             }
         }
     }
+    time = <?php echo json_encode($_GET['time']); ?>;
+    space = <?php echo json_encode($_GET['space']); ?>;
+
 
     function add(accumulator, a) {
         return accumulator + a;
     }
-    function getData(){
+   /*  function getData(){
         var data= <?php echo file_get_contents("http://localhost:1234/gasm/public/chart/display?time=" . $_GET['time'] . "&space=" . $_GET['space']);
         ?>;
         return data;
     }
-    var data=getData();
+    var data=getData(); */
 
     function getCities(data){
         var cities=[];
@@ -167,17 +170,22 @@
     var space='<?php echo $_GET['space'];?>';
     var time='<?php echo $_GET['time'];?>';
 
-
-    console.log(data);
-    console.log(data[0].city)
+    
+    fetch("http://localhost:1234/gasm/public/chart/display?time=" + time + "&space=" + space)
+  .then(response => response.json())
+  .then(data =>
+  { console.log(data);
+ 
+    //console.log(data);
+    //console.log(data[0].city)
 
     var glass_quantities=getGlassAmounts(data);
     var paper_quantities=getPaperAmounts(data);
     var plastic_quantities=getPlasticAmounts(data);
-    console.log("AICi E PLASTIC");
-    console.log(plastic_quantities);
+   // console.log("AICi E PLASTIC");
+    //console.log(plastic_quantities);
     var arrData = getCities(data);
-    console.log(arrData);
+    //console.log(arrData);
 
     var red_plastic="rgba(255,0,0,1)";
     var yellow_paper="rgba(255,255,0,1)";
@@ -302,8 +310,8 @@
   
 
 
-    console.log(data);
-    console.log(data[0].city)
+    //console.log(data);
+    //console.log(data[0].city)
 
     var glass_quantities=getGlassAmounts(data);
     var paper_quantities=getPaperAmounts(data);
@@ -463,6 +471,7 @@
 
 
     }
+  });
 
     </script>
 </html>
